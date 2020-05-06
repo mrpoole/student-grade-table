@@ -13,7 +13,7 @@
 
     <h1 class="my-4 ml-5">Student Grade Table</h1>
 
-    <table class="table col-md-8 offset-md-2">
+    <table id="table" class="table table-striped col-md-10 offset-md-1">
         <thead>
             <tr>
                 <th scope="col">Student Name</th>
@@ -22,27 +22,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Mark</td>
-                <td>Course</td>
-                <td>70</td>
-            </tr>
-            <tr>
-                <td>Jacob</td>
-                <td>Course</td>
-                <td>98</td>
-            </tr>
-            <tr>
-                <td>Larry</td>
-                <td>Course</td>
-                <td>88</td>
-            </tr>
+            <!-- grade table is created in components/grade-table.js-->
         </tbody>
     </table>
 
     <!-- jquery and javascript-->
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="components/app.js"></script>
+    <script src="components/grade-table.js"></script>
     <script src="main.js"></script>
 </body>
 

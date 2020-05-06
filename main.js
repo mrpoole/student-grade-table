@@ -1,4 +1,7 @@
-// In main.js, instantiate your App class and call the start method of the resulting object. Watch the Console and Network tabs of your browser's developer tools. You should see a request for the data in the Network tab and the received array of data in the Console tab.
+//grabbing the table from the dom and passing it in as a parameter to GradeTable, which controls updating the grade table
+const tableElement = document.getElementById('table');
+const gradeTable = new GradeTable(tableElement);
 
-const app = new App();
+//instantiating the app
+const app = new App(gradeTable);
 app.start();
