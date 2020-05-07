@@ -17,11 +17,10 @@ class App {
     handleGetGradesSuccess(grades) {
         this.gradeTable.updateGrades(grades);
         
-        let classSize = 0;
+        let classSize = grades.length;
         let gradeSum = 0;
 
         grades.forEach(student => {
-            classSize++;
             gradeSum += student.grade;
         })
 
