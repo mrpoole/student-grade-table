@@ -7,5 +7,5 @@ const headerElement = $('header');
 const pageHeader = new PageHeader(headerElement);
 
 //instantiating the app
-const app = new App(gradeTable);
+const app = new App(gradeTable, pageHeader);
 app.start();

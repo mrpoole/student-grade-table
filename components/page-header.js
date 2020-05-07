@@ -4,6 +4,6 @@ class PageHeader {
     }
 
     updateAverage(newAverage){
-        console.log(newAverage);
+        $('.badge').text(newAverage);
     }
 }
