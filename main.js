@@ -6,6 +6,10 @@ const gradeTable = new GradeTable(tableElement);
 const headerElement = $('header');
 const pageHeader = new PageHeader(headerElement);
 
+//grabbing the form and passing it to the GradeForm, which controls adding new student grades
+const formElement = $('form');
+const gradeForm = new GradeForm(formElement);
+
 //instantiating the app
-const app = new App(gradeTable, pageHeader);
+const app = new App(gradeTable, pageHeader, gradeForm);
 app.start();

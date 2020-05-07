@@ -7,6 +7,7 @@
     <title>Student Grade Table</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 
 <body>
@@ -24,24 +25,55 @@
         </div>
     </header>
 
-    <table id="table" class="table table-striped col-md-10 offset-md-1">
-        <thead>
-            <tr>
-                <th scope="col">Student Name</th>
-                <th scope="col">Course</th>
-                <th scope="col">Grade</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- grade table is created in components/grade-table.js-->
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="row ">
+            <div class="col-9">
+                <table id="table" class="table table-striped col-md-10">
+                    <thead>
+                        <tr>
+                            <th scope="col">Student Name</th>
+                            <th scope="col">Course</th>
+                            <th scope="col">Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- grade table is created in components/grade-table.js-->
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-3">
+                <form>
+                    <div class="form-group row">
+                        <label for="staticName" class="col-sm-2 col-form-label"><i class="fas fa-user"></i></label>
+                        <div class="col-sm-10 form-group">
+                            <input type="text" class="form-control" id="staticName" value="Name" name="name">
+                        </div>
+                        <label for="staticCourse" class="col-sm-2 col-form-label"><i
+                                class="far fa-list-alt"></i></label>
+                        <div class="col-sm-10 form-group">
+                            <input type="text" class="form-control" id="staticCourse" value="Course" name="course">
+                        </div>
+                        <label for="staticGrade" class="col-sm-2 col-form-label"><i
+                                class="fas fa-graduation-cap"></i></label>
+                        <div class="col-sm-10 form-group">
+                            <input type="text" class="form-control" id="staticGrade" value="Grade" name="grade">
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-end pr-0">
+                        <button type="submit" class="btn btn-success mx-2">Add</button>
+                        <button type="reset" class="btn btn-danger m-0">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- jquery and javascript-->
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="components/app.js"></script>
     <script src="components/grade-table.js"></script>
     <script src="components/page-header.js"></script>
+    <script src="components/grade-form.js"></script>
     <script src="main.js"></script>
 </body>
 
