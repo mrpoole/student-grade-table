@@ -15,9 +15,6 @@ class App {
         console.error(error);
     }
 
-    //gets grades from getGrades
-    //updates the grades in the table (from constructor param)
-    //computes the grade average and passes it to this.pageHeader.updateAverage
     handleGetGradesSuccess(grades) {
         this.gradeTable.updateGrades(grades);
 
@@ -81,5 +78,4 @@ class App {
         this.getGrades();
         this.gradeForm.onSubmit(this.createGrade);
     }
-
 }
