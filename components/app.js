@@ -64,7 +64,7 @@ class App {
                     "grade": grade
                 },
                 success: student => this.handleCreateGradeSuccess(student),
-                error: error=> this.handleCreateGradeError(error)
+                error: error => this.handleCreateGradeError(error)
             }
         );
     }
@@ -77,20 +77,21 @@ class App {
         this.getGrades();
     }
 
-    deleteGrade(id){
+    deleteGrade(id) {
         console.log(id);
     }
 
-    handleDeleteGradeError(error){
+    handleDeleteGradeError(error) {
         console.error(error);
     }
 
-    handleDeleteGradeSuccess(){
+    handleDeleteGradeSuccess() {
         this.getGrades();
     }
 
     start() {
         this.getGrades();
         this.gradeForm.onSubmit(this.createGrade);
+        this.gradeTable.onDeleteClick(this.deleteGrade);
     }
 }
