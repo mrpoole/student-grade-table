@@ -8,6 +8,9 @@ class App {
             this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this),
             this.createGrade = this.createGrade.bind(this),
             this.handleCreateGradeError = this.handleCreateGradeError.bind(this),
+            this.handleCreateGradeSuccess = this.handleCreateGradeSuccess.bind(this),
+            this.deleteGrade = this.deleteGrade.bind(this),
+            this.handleDeleteGradeError = this.handleCreateGradeError.bind(this),
             this.handleCreateGradeSuccess = this.handleCreateGradeSuccess.bind(this)
     }
 
@@ -15,9 +18,6 @@ class App {
         console.error(error);
     }
 
-    //gets grades from getGrades
-    //updates the grades in the table (from constructor param)
-    //computes the grade average and passes it to this.pageHeader.updateAverage
     handleGetGradesSuccess(grades) {
         this.gradeTable.updateGrades(grades);
 
@@ -49,7 +49,6 @@ class App {
     }
 
     createGrade(name, course, grade) {
-        console.log(name, course, grade);
         $.ajax(
             {
                 url: 'https://sgt.lfzprototypes.com/api/grades',
@@ -64,7 +63,7 @@ class App {
                     "grade": grade
                 },
                 success: student => this.handleCreateGradeSuccess(student),
-                error: error=> this.handleCreateGradeError(error)
+                error: error => this.handleCreateGradeError(error)
             }
         );
     }
@@ -77,9 +76,29 @@ class App {
         this.getGrades();
     }
 
+    deleteGrade(id) {
+        $.ajax({
+            url: 'https://sgt.lfzprototypes.com/api/grades/' + id,
+            method: 'DELETE',
+            headers: {
+                'X-Access-Token': 'QPdWiMcP'
+            },
+            success: data => this.handleDeleteGradeSuccess(data),
+            error: error => this.handleDeleteGradeError(error)
+        })
+    }
+
+    handleDeleteGradeError(error) {
+        console.error(error);
+    }
+
+    handleDeleteGradeSuccess() {
+        this.getGrades();
+    }
+
     start() {
         this.getGrades();
         this.gradeForm.onSubmit(this.createGrade);
+        this.gradeTable.onDeleteClick(this.deleteGrade);
     }
-
 }

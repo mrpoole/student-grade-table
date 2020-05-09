@@ -10,7 +10,6 @@ class GradeForm {
     }
 
     handleSubmit(event){
-        //console.log('in handleSubmit', event.target);
         event.preventDefault();
 
         let formData = new FormData(event.target);

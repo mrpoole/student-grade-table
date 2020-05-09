@@ -1,6 +1,7 @@
 //grabbing the table from the dom and passing it in as a parameter to GradeTable, which controls updating the grade table
 const tableElement = $('table');
-const gradeTable = new GradeTable(tableElement);
+const noGradesParagraph = $('#no-grades');
+const gradeTable = new GradeTable(tableElement, noGradesParagraph);
 
 //grabbing the header from the dom and passing it to PageHeader, which updates the grade average
 const headerElement = $('header');
