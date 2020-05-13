@@ -15,10 +15,10 @@ class GradeTable {
         })
 
         //displays a message if there are no grades
-        if (grades) {
-            return;
+        if (grades.length != 0) {
+            $("#no-grades").removeClass('d-block');
         } else {
-            $(this.tableElement).find('p').addClass('d-block');
+            $("#no-grades").addClass('d-block');
         }
     }
 
